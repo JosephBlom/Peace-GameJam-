@@ -32,7 +32,16 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    void OnMove()
+    void OnMove(InputValue value)
+    {
+        moveInput = value.Get<Vector2>();
+    }
+
+    void Run()
+    {
+        Vector2 playerVelocity = new Vector2(moveInput.x * runSpeed, myRigidbody.velocity.y);
+        myRigidbody2D.velocity = playerVelocity;
+    }
 
     void p1Move()
     {
