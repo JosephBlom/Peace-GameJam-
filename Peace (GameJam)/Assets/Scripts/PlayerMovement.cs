@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -12,8 +13,22 @@ public class PlayerMovement : MonoBehaviour
     [Tooltip("Sets the players jump height")]
     public int jumpHeight = 1;
 
+    public InputAction playerControls;
+
+    
+
     Vector2 moveInput;
     Rigidbody2D rb;
+
+    private void OnEnable()
+    {
+        playerControls.Enable();
+    }
+
+    private void OnDisable()
+    {
+        playerControls.Disable();
+    }
 
     private void Start()
     {
@@ -22,52 +37,22 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        if (p1)
-        {
-            p1Move();
-        }
-        else
-        {
-            p2Move();
-        }
+        moveInput = playerControls.ReadValue<Vector2>();
+        Move();
     }
 
-    void OnMove(InputValue value)
-    {
-        moveInput = value.Get<Vector2>();
-    }
 
-    void Run()
-    {
-        Vector2 playerVelocity = new Vector2(moveInput.x * runSpeed, myRigidbody.velocity.y);
-        myRigidbody2D.velocity = playerVelocity;
-    }
 
-    void p1Move()
+    void Move()
     {
-        if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D))
+        rb.velocity = new Vector2(moveInput.x * moveSpeed, rb.velocity.y);
+        if (Input.GetKeyDown(KeyCode.W) && p1)
         {
-            Vector2 playerVelocity = new Vector2(moveInput.x * moveSpeed, rb2d.velocity.y);
-            rb2d.velocity = playerVelocity;
+            rb.velocity = new Vector2(rb.velocity.x, jumpHeight);
         }
-        if (Input.GetKeyDown(KeyCode.W))
+        else if(Input.GetKeyDown(KeyCode.UpArrow) && !p1)
         {
-            rb.velocity += new Vector2(rb.velocity.x, 1 * jumpHeight * Time.deltaTime);
-        }
-    }
-    void p2Move()
-    {
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
-        {
-            rb.velocity = new Vector2(-1 * moveSpeed * Time.deltaTime, 0);
-        }
-        else if (Input.GetKeyDown(KeyCode.RightArrow))
-        {
-            rb.velocity = new Vector2(1 * moveSpeed * Time.deltaTime, 0);
-        }
-        if (Input.GetKeyDown(KeyCode.UpArrow))
-        {
-            rb.velocity += new Vector2(rb.velocity.x, 1 * jumpHeight * Time.deltaTime);
+            rb.velocity = new Vector2(rb.velocity.x, jumpHeight);
         }
     }
 }
