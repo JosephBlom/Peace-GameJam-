@@ -5,6 +5,7 @@ using UnityEngine;
 public class Player1Portal : MonoBehaviour
 {
     public GameObject portalOne;
+    public Camera playerCam;
 
     void Update()
     {
@@ -14,7 +15,7 @@ public class Player1Portal : MonoBehaviour
     void shootPortal()
     {
         Vector3 shootDirection = Input.mousePosition;
-        shootDirection = Camera.main.ScreenToWorldPoint(shootDirection);
+        shootDirection = playerCam.ScreenToWorldPoint(shootDirection);
         shootDirection.z = 0f;
         shootDirection -= transform.position;
 

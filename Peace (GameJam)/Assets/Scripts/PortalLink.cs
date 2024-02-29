@@ -23,9 +23,7 @@ public class PortalLink : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         currentlyCollding = true;
-        Vector3 previousVelocity = collision.GetComponent<Rigidbody>().velocity;
         StartCoroutine(teleport(collision));
-        collision.GetComponent<Rigidbody>().velocity = previousVelocity;
     }
     
     IEnumerator teleport(Collider2D collision)
