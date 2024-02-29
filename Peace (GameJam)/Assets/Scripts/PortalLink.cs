@@ -7,6 +7,7 @@ public class PortalLink : MonoBehaviour
     [SerializeField] GameObject otherPortal;
     [Tooltip("This is the tag of the other portal.")]
     [SerializeField] string Tag;
+    [SerializeField] float portalDelay = 0.3f;
 
     bool currentlyCollding;
 
@@ -28,7 +29,7 @@ public class PortalLink : MonoBehaviour
     
     IEnumerator teleport(Collider2D collision)
     {
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(portalDelay);
         if (currentlyCollding)
         {
             collision.transform.position = otherPortal.transform.position;
