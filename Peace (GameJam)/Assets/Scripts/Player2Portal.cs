@@ -2,12 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerPortalManager : MonoBehaviour
+public class Player2Portal : MonoBehaviour
 {
     public GameObject portalOne;
-    public GameObject portalTwo;
-
-
 
     void Update()
     {
@@ -21,36 +18,27 @@ public class PlayerPortalManager : MonoBehaviour
         shootDirection.z = 0f;
         shootDirection -= transform.position;
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(1))
         {
-            generatePortalOne(shootDirection);
-        }
-        else if (Input.GetMouseButtonDown(1))
-        {
-            generatePortalTwo(shootDirection);
+            generatePortal(shootDirection);
         }
     }
 
-    void generatePortalOne(Vector3 shootDirection)
+    void generatePortal(Vector3 shootDirection)
     {
-        GameObject previousPortal = GameObject.FindGameObjectWithTag("Portal1");
+        GameObject previousPortal = GameObject.FindGameObjectWithTag("Portal2");
 
-        if(previousPortal != null)
+        if (previousPortal != null)
         {
             Destroy(previousPortal);
         }
 
         RaycastHit2D hit = Physics2D.Raycast(transform.position, shootDirection, Mathf.Infinity);
 
-        if(hit)
+        if (hit)
         {
             GameObject portal = Instantiate(portalOne, hit.point, hit.collider.transform.rotation);
         }
-        
-    }
-
-    void generatePortalTwo(Vector3 shootDirection)
-    {
 
     }
 }
