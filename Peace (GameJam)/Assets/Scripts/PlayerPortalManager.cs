@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerPortalManager : MonoBehaviour
 {
     public GameObject portalOne;
-    public GameObject poratlTwo;
+    public GameObject portalTwo;
 
 
 
@@ -33,9 +33,20 @@ public class PlayerPortalManager : MonoBehaviour
 
     void generatePortalOne(Vector3 shootDirection)
     {
+        GameObject previousPortal = GameObject.FindGameObjectWithTag("Portal1");
+
+        if(previousPortal != null)
+        {
+            Destroy(previousPortal);
+        }
+
         RaycastHit2D hit = Physics2D.Raycast(transform.position, shootDirection, Mathf.Infinity);
 
-        Debug.Log(hit.collider.name);
+        if(hit)
+        {
+            GameObject portal = Instantiate(portalOne, hit.point, hit.collider.transform.rotation);
+        }
+        
     }
 
     void generatePortalTwo(Vector3 shootDirection)
