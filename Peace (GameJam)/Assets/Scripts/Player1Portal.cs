@@ -1,0 +1,44 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Player1Portal : MonoBehaviour
+{
+    public GameObject portalOne;
+
+    void Update()
+    {
+        shootPortal();
+    }
+
+    void shootPortal()
+    {
+        Vector3 shootDirection = Input.mousePosition;
+        shootDirection = Camera.main.ScreenToWorldPoint(shootDirection);
+        shootDirection.z = 0f;
+        shootDirection -= transform.position;
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            generatePortal(shootDirection);
+        }
+    }
+
+    void generatePortal(Vector3 shootDirection)
+    {
+        GameObject previousPortal = GameObject.FindGameObjectWithTag("Portal1");
+
+        if(previousPortal != null)
+        {
+            Destroy(previousPortal);
+        }
+
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, shootDirection, Mathf.Infinity);
+
+        if(hit)
+        {
+            GameObject portal = Instantiate(portalOne, hit.point, hit.collider.transform.rotation);
+        }
+        
+    }
+}
