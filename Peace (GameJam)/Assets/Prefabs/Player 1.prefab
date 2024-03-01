@@ -272,7 +272,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   portalOne: {fileID: 1617394425567587118, guid: 1739fed8dfb652f4d8031d3ca7b33f96, type: 3}
-  playerCam: {fileID: 9076409017264221363, guid: e0e51672bc465594eb3fe49af31671c1, type: 3}
+  playerCam: {fileID: 0}
 --- !u!95 &7917242263833582321
 Animator:
   serializedVersion: 5

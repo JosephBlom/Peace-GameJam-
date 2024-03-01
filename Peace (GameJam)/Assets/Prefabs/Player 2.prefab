@@ -271,4 +271,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   portalOne: {fileID: 2399804602141364086, guid: cdba4988b426c4b4985015df27b53814, type: 3}
-  playerCam: {fileID: 4181442578478252911, guid: cf324a592684efe4bac74e136cf4147a, type: 3}
+  playerCam: {fileID: 0}
