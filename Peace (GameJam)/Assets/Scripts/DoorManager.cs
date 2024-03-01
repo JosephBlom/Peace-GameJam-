@@ -10,16 +10,22 @@ public class DoorManager : MonoBehaviour
 
     public void checkIfOpen()
     {
-        foreach(GameObject button in buttons)
-        {
-            if (button.GetComponent<ButtonManager>().pressed)
-            {
-                open = true;
-            }
-        }
+        open = checkIfTrue();
         if (open)
-        {
+        {    
             Destroy(gameObject);
         }
+    }
+
+    bool checkIfTrue()
+    {
+        foreach (GameObject button in buttons)
+        {
+            if (!button.GetComponent<ButtonManager>().pressed)
+            {
+                return false;
+            }
+        }
+        return true;
     }
 }

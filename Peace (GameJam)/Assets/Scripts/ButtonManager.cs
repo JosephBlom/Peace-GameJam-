@@ -17,17 +17,22 @@ public class ButtonManager : MonoBehaviour
         {
             if (checkTag)
             {
-                if (collision.collider.CompareTag(wantedTag))
+                if (collision.collider.CompareTag(wantedTag) && door != null)
                 {
                     pressed = true;
                     door.GetComponent<DoorManager>().checkIfOpen();
                 }
             }
-            else
+            else if(door != null)
             {
                 pressed = true;
                 door.GetComponent<DoorManager>().checkIfOpen();
             }
         }
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        pressed = false;
     }
 }
