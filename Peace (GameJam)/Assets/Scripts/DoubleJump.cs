@@ -8,6 +8,7 @@ public class DoubleJump : MonoBehaviour
     public int maxJumps = 2;
     private int remainingJumps;
     private Rigidbody2D rb;
+    private bool isGrounded;
 
     void Start()
     {
@@ -17,17 +18,26 @@ public class DoubleJump : MonoBehaviour
 
     void Update()
     {
+        CheckGrounded();
         HandleJump();
+    }
+
+    void CheckGrounded()
+    {
+        isGrounded = Physics2D.Raycast(transform.position, Vector2.down, 0.1f, LayerMask.GetMask("Ground"));
     }
 
     void HandleJump()
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            if (remainingJumps > 0)
+            if (isGrounded || remainingJumps > 0)
             {
                 Jump();
-                remainingJumps--;
+                if (!isGrounded)
+                {
+                    remainingJumps--;
+                }
             }
         }    
     }
