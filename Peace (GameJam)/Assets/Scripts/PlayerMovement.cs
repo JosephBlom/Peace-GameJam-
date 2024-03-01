@@ -12,10 +12,9 @@ public class PlayerMovement : MonoBehaviour
     public int moveSpeed = 1;
     [Tooltip("Sets the players jump height")]
     public int jumpHeight = 1;
+    [SerializeField] Transform groundedRay;
 
     public InputAction playerControls;
-
-    
 
     Vector2 moveInput;
     Rigidbody2D rb;
@@ -48,11 +47,19 @@ public class PlayerMovement : MonoBehaviour
         rb.velocity = new Vector2(moveInput.x * moveSpeed, rb.velocity.y);
         if (Input.GetKeyDown(KeyCode.W) && p1)
         {
-            rb.velocity = new Vector2(rb.velocity.x, jumpHeight);
+            RaycastHit2D ray = Physics2D.Raycast(groundedRay.position, Vector2.down, 0.1f);
+            if (ray)
+            {
+                rb.velocity = new Vector2(rb.velocity.x, jumpHeight);
+            }
         }
         else if(Input.GetKeyDown(KeyCode.UpArrow) && !p1)
         {
-            rb.velocity = new Vector2(rb.velocity.x, jumpHeight);
+            RaycastHit2D ray = Physics2D.Raycast(groundedRay.position, Vector2.down, 0.1f);
+            if (ray)
+            {
+                rb.velocity = new Vector2(rb.velocity.x, jumpHeight);
+            }
         }
     }
 }
