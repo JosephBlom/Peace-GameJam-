@@ -30,7 +30,7 @@ public class PortalLink : MonoBehaviour
     IEnumerator teleport(Collider2D collision)
     {
         yield return new WaitForSeconds(portalDelay);
-        if (currentlyCollding)
+        if (currentlyCollding && otherPortal != null)
         {
             collision.transform.position = otherPortal.transform.position;
         }
