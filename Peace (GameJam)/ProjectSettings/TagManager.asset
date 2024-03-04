@@ -9,6 +9,7 @@ TagManager:
   - Portal2
   - PlayerButton
   - Box
+  - NonTeleport
   layers:
   - Default
   - TransparentFX
