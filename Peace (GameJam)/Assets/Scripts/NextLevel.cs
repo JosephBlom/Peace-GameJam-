@@ -8,6 +8,7 @@ public class NextLevel : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         int sceneCount = SceneManager.GetActiveScene().buildIndex;
-        SceneManager.LoadScene(sceneCount++);
+        sceneCount++;
+        SceneManager.LoadScene(sceneCount);
     }
 }

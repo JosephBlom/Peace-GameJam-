@@ -6,7 +6,16 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Joseph Test.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/Xander Scenes/X_LVL 1.unity
+    guid: 9d4a3f295bcb57f428e8708d3b0c084d
+  - enabled: 1
+    path: Assets/Xander Scenes/X_LVL 2.unity
+    guid: 6ac53fd4b7cf6e343b62d291a97e9438
+  - enabled: 1
+    path: Assets/Xander Scenes/X_LVL 3.unity
+    guid: 4002fb063d8481c4ea24f6d9b89dc7fd
+  - enabled: 1
+    path: Assets/Xander Scenes/X_LVL 4.unity
+    guid: 48d418690becb704586fc9dc35879cfb
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 6692fa592cda316478f0b17e88622040, type: 2}
