@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5507672446731563847}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: PlayerGrounded
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46,9 +46,9 @@ GameObject:
   - component: {fileID: 2322323491223427256}
   - component: {fileID: 1607580774359304698}
   - component: {fileID: 4279068246659530648}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: Player 2
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -67,6 +67,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5507672446731563847}
+  - {fileID: 7445729057555845611}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6178012771758127533
@@ -294,3 +295,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   portalOne: {fileID: 2399804602141364086, guid: cdba4988b426c4b4985015df27b53814, type: 3}
   playerCam: {fileID: 0}
+  portalCast: {fileID: 7445729057555845611}
+--- !u!1 &6383652120797739171
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7445729057555845611}
+  m_Layer: 0
+  m_Name: PortalCast
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7445729057555845611
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6383652120797739171}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.41, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8474234347249186886}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

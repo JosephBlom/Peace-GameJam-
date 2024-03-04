@@ -476,6 +476,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2889478564836549595, guid: 6135559da6e0f2e4c8851bf2f8c8d2ec, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.561
+      objectReference: {fileID: 0}
     - target: {fileID: 3986428742759151096, guid: 6135559da6e0f2e4c8851bf2f8c8d2ec, type: 3}
       propertyPath: playerCam
       value: 
@@ -505,6 +509,10 @@ PrefabInstance:
       propertyPath: playerCam
       value: 
       objectReference: {fileID: 981782391}
+    - target: {fileID: 5507672446731563847, guid: 8c6150a6f26abf040a97c896984b629e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.566
+      objectReference: {fileID: 0}
     - target: {fileID: 8474234347249186886, guid: 8c6150a6f26abf040a97c896984b629e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 6.44
