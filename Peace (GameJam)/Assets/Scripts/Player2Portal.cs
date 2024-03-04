@@ -6,6 +6,7 @@ public class Player2Portal : MonoBehaviour
 {
     public GameObject portalOne;
     public Camera playerCam;
+    public Transform portalCast;
 
     void Update()
     {
@@ -34,9 +35,9 @@ public class Player2Portal : MonoBehaviour
             Destroy(previousPortal);
         }
 
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, shootDirection, Mathf.Infinity);
+        RaycastHit2D hit = Physics2D.Raycast(portalCast.position, shootDirection, Mathf.Infinity);
 
-        if (hit)
+        if (hit && !hit.collider.CompareTag("Player"))
         {
             GameObject portal = Instantiate(portalOne, hit.point, hit.collider.transform.rotation);
         }
