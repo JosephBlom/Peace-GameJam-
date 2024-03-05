@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Xander Scenes/MainMenu.unity
+    guid: 82d994fa28e12b14e859fbd46f59360c
+  - enabled: 1
     path: Assets/Xander Scenes/X_LVL 1.unity
     guid: 9d4a3f295bcb57f428e8708d3b0c084d
   - enabled: 1
@@ -17,5 +20,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Xander Scenes/X_LVL 4.unity
     guid: 48d418690becb704586fc9dc35879cfb
+  - enabled: 1
+    path: Assets/Xander Scenes/WinScreen.unity
+    guid: ca45ccf9aa6f8044196ded25e8a29df7
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 6692fa592cda316478f0b17e88622040, type: 2}
